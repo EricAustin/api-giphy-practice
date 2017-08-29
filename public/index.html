@@ -10,7 +10,7 @@
          <script src="client.js"></script>
     </head>
     <body ng-app="myApp" ng-controller="SwapiController as vm">
-        <h1>Star Wars API</h1>
+        <!-- <h1>Star Wars API</h1>
         <p><input type="number" ng-model="vm.speciesId" placeholder="Enter a number" /></p>
         <p><button ng-click="vm.getSpecies(vm.speciesId)">Get Species Data</button></p>
 
@@ -22,7 +22,21 @@
                     <a href="{{vm.speciesResult.films[0]}}">{{vm.filmResult.title}}</a>
                 </li>
             </ul>
+        </div> -->
+
+        <button ng-click="vm.getTrendingGiphy()">Top 5 trending images</button>
+        <button ng-click="vm.getRandomGiphy()">Get a random image</button>
+        <br>
+        <input ng-model="vm.search" placeholder="Search for...">
+        <button ng-click="vm.searchExecute()">Search!</button>
+        <br>
+        <div ng-repeat="image in vm.links">    
+            <img ng-src="{{image}}">
         </div>
-        
+        <div>
+            {{vm.result}}
+            <img ng-src="{{vm.rando}}">
+            <img ng-src="{{vm.result}}">
+        </div>
     </body>
 </html>
